@@ -25,7 +25,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/show/users', [ProfileController::class,'show']);
-    Route::get('/store/user', [ProfileController::class,'store']);
+
+    Route::post('/store/user', [ProfileController::class,'store']);
 
     Route::post('/register',[RegisteredUserController::class,'store']);
     Route::post('/login',[AuthenticatedSessionController::class,'store']);
